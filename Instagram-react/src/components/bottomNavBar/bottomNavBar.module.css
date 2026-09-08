@@ -1,0 +1,22 @@
+.navbar{
+    display: flex;
+    justify-content: center !important;
+    box-shadow: 0 10px 20px 0;
+    position: fixed !important;
+    bottom: 0 !important;
+    background-color: white !important;
+    width: 100%;
+}
+
+
+.fotoPerfilStory{
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.stackIcones{
+    display: flex;
+    gap: 32px;
+}

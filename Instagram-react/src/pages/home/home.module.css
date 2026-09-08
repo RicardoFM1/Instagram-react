@@ -1,0 +1,41 @@
+.fotoPerfilPost{
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.stackInfoPost{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px 0 0;
+    height: 30%;
+}
+
+.divPost{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+@media (min-width: 768px) {
+    .divPost{
+        display: flex;
+        
+        
+    }
+
+    .main{
+        width: 100%;
+       
+    }
+
+    .listagemPosts{
+        
+    }
+
+    .imgPost{
+        
+    }
+}

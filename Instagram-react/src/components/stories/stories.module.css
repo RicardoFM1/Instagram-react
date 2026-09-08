@@ -1,0 +1,28 @@
+.listagemEmGrupo {
+  margin: 14px;
+  overflow: auto;
+  display: flex;
+  gap: 0;
+}
+
+.listagemEmGrupo > div {
+  border: none !important;
+  padding: 0;
+}
+
+.listagemEmGrupo > div > div {
+  align-items: center;
+}
+
+.font {
+  font-size: 10px !important;
+}
+
+
+.fotoPerfilStory {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgb(216, 34, 49);
+}
