@@ -12,7 +12,6 @@ import BottomNavBar from "../../components/bottomNavBar/bottomNavBar";
 
 const Home = () => {
   const [salvo, setSalvo] = useState(false);
-  const [curtido, setCurtido] = useState(false);
 
   const [posts, setPosts] = useState([
     {
@@ -21,7 +20,9 @@ const Home = () => {
       likes: 100,
       comments: 265,
       reposts: 5,
-      image:"https://plus.unsplash.com/premium_photo-1669741908308-5ca216f3fcd1?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      liked: false,
+      image:
+        "https://plus.unsplash.com/premium_photo-1669741908308-5ca216f3fcd1?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       shares: 765,
       description: "Um cara bem legal fazendo algo legal",
     },
@@ -31,6 +32,7 @@ const Home = () => {
       likes: 1500,
       comments: 2000,
       reposts: 56,
+      liked: false,
       image:
         "https://images.unsplash.com/photo-1626469028023-896eda77d814?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       shares: 200,
@@ -38,11 +40,21 @@ const Home = () => {
     },
   ]);
 
-  const handleCurtido = (post) => {
-      setCurtido(!curtido)
-      const postagem = posts.find(post.id)
-      setPosts()
-  }
+  const handleCurtido = (id) => {
+    setPosts((estadoAnterior) =>
+      estadoAnterior.map((post) => {
+        if (post.id !== id) return post;
+
+        const jaCurtido = post.liked;
+
+        return {
+          ...post,
+          likes: jaCurtido ? post.likes - 1 : post.likes + 1,
+          liked: !jaCurtido,
+        };
+      }),
+    );
+  };
 
   return (
     <>
@@ -77,15 +89,15 @@ const Home = () => {
                 <article className="d-flex p-3 pb-0 justify-content-between ">
                   <Stack direction="horizontal" gap={3}>
                     <p>
-                      {curtido ? (
+                      {post.liked ? (
                         <FaHeart
                           color="red"
-                          onClick={() => handleCurtido(post)}
+                          onClick={() => handleCurtido(post.id)}
                           size={20}
                         />
                       ) : (
                         <FaRegHeart
-                          onClick={() => handleCurtido(post)}
+                          onClick={() => handleCurtido(post.id)}
                           size={20}
                           className="me-1"
                         />
