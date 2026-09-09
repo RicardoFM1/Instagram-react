@@ -2,7 +2,7 @@
   margin: 14px;
   overflow: auto;
   display: flex;
-  gap: 0;
+  gap: 4px;
 }
 
 .listagemEmGrupo > div {

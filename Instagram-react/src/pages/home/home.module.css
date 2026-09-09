@@ -22,10 +22,7 @@
 @media (min-width: 768px) {
     .divPost{
         display: flex;
-        
-        
     }
-
     .main{
         width: 100%;
        
