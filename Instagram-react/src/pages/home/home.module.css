@@ -1,18 +1,18 @@
-.fotoPerfilPost{
+.fotoPerfilPost {
     width: 28px;
     height: 28px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.stackInfoPost{
+.stackInfoPost {
     display: flex;
     justify-content: space-between;
     padding: 10px 14px 0 0;
     height: 30%;
 }
 
-.divPost{
+.divPost {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,32 +20,32 @@
 
 
 @media (min-width: 768px) {
-    .listagemPosts{
-        align-items: center !important;
+    .listagemPosts {
+        align-items: center;
         max-width: 100%;
     }
-    .divPost{
-        display: flex;
-        width: 50%;
-        align-self: none;
-        font-size: 26px;
+
+    .divPost {
+        display: flex ;
+        width: 50% ;
+        align-self: center !important;
+        font-size: 20px;
     }
 
-    .stackInfoPost{
-        align-content: center !important; 
-    }
+  
 
-    .fotoPerfilPost{
+    .fotoPerfilPost {
         width: 56px;
         height: 56px;
     }
-    .main{
-        width: 100%;
-        
+
+    .main {
+        width: 100vw;
     }
-    .conteudoPrincipal{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+
+    .conteudoPrincipal {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
 }
