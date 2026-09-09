@@ -9,6 +9,7 @@ import { FaBookmark } from "react-icons/fa";
 import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import BottomNavBar from "../../components/bottomNavBar/bottomNavBar";
+import Sidebar from "../../components/sidebar/sidebar";
 
 const Home = () => {
   const [salvo, setSalvo] = useState(false);
@@ -75,7 +76,14 @@ const Home = () => {
       ],
       profile: "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1085&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
+    {
+      id: 5,
+      user: '066_eduardo',
+      videos: [
 
+      ],
+      profile: "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1085&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
 
   ])
 
@@ -97,91 +105,97 @@ const Home = () => {
 
   return (
     <>
-      <Stories stories={stories} setStories={setStories} />
-      <main>
-        <Stack className={style.listagemPosts}>
-          {posts.map((post) => (
-            <Stack className={style.divPost}>
-              <Stack
-                direction="horizontal"
-                className={style.stackInfoPost}
-                gap={2}
-              >
-                <section className="border-0 p-3 d-flex gap-2">
-                  <img
-                    className={style.fotoPerfilPost}
-                    src="https://plus.unsplash.com/premium_photo-1695575578331-b09400a8a9bb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Foto de perfil do post"
-                  />
-                  <p className="mb-0 fw-semibold">{post.user}</p>
+      <main className="d-md-flex">
+        <Sidebar />
+
+        <div className={style.conteudoPrincipal}>
+
+          <Stories stories={stories} setStories={setStories} />
+          <Stack className={style.listagemPosts}>
+            {posts.map((post) => (
+              <Stack className={style.divPost}>
+                <Stack
+                  direction="horizontal"
+                  className={style.stackInfoPost}
+                  gap={2}
+                >
+                  <section className="border-0 p-3 d-flex gap-2">
+                    <img
+                      className={style.fotoPerfilPost}
+                      src="https://plus.unsplash.com/premium_photo-1695575578331-b09400a8a9bb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Foto de perfil do post"
+                    />
+                    <p className="mb-0 fw-semibold">{post.user}</p>
+                  </section>
+                  <Button className="border-0 bg-transparent text-black fw-bold">
+                    ...
+                  </Button>
+                </Stack>
+                <img
+                  className={style.imgPost}
+                  src={post.profile}
+                  alt="profilem post"
+                />
+                <section>
+                  <article className="d-flex p-3 pb-0 justify-content-between ">
+                    <Stack direction="horizontal" gap={3}>
+                      <p>
+                        {post.liked ? (
+                          <FaHeart
+                            color="red"
+                            onClick={() => handleCurtido(post.id)}
+                            size={20}
+                          />
+                        ) : (
+                          <FaRegHeart
+                            onClick={() => handleCurtido(post.id)}
+                            size={20}
+                            className="me-1"
+                          />
+                        )}
+                        <span className="fw-semibold">{post.likes}</span>
+                      </p>
+                      <p>
+                        <FaRegComment size={20} className="me-1" />
+                        <span className="fw-semibold">{post.comments}</span>
+                      </p>
+                      <p>
+                        <BiRepost size={24} className="me-1" />
+                        <span className="fw-semibold">{post.reposts}</span>
+                      </p>
+                      <p>
+                        <BsSend size={20} className="me-1" />
+                        <span className="fw-semibold">{post.shares}</span>
+                      </p>
+                    </Stack>
+                    {salvo ? (
+                      <FaBookmark onClick={() => setSalvo(!salvo)} size={20} />
+                    ) : (
+                      <BiBookmark onClick={() => setSalvo(!salvo)} size={20} />
+                    )}
+                  </article>
                 </section>
-                <Button className="border-0 bg-transparent text-black fw-bold">
-                  ...
-                </Button>
+                <section>
+                  <article>
+                    <p className="ps-3 mt-0 mb-0">
+                      Curtido por <span className="fw-bold">liam_legal</span> e{" "}
+                      <span className="fw-bold">outras 265 pessoas</span>
+                    </p>
+                    <p className="ps-3 mt-0">
+                      <span className="fw-bold">{post.user}</span>{" "}
+                      {post.description}
+                    </p>
+                    <p className="ps-3 text-muted">
+                      há 3 horas ·{" "}
+                      <span className="fw-semibold">Ver tradução</span>
+                    </p>
+                  </article>
+                </section>
               </Stack>
-              <img
-                className={style.imgPost}
-                src={post.profile}
-                alt="profilem post"
-              />
-              <section>
-                <article className="d-flex p-3 pb-0 justify-content-between ">
-                  <Stack direction="horizontal" gap={3}>
-                    <p>
-                      {post.liked ? (
-                        <FaHeart
-                          color="red"
-                          onClick={() => handleCurtido(post.id)}
-                          size={20}
-                        />
-                      ) : (
-                        <FaRegHeart
-                          onClick={() => handleCurtido(post.id)}
-                          size={20}
-                          className="me-1"
-                        />
-                      )}
-                      <span className="fw-semibold">{post.likes}</span>
-                    </p>
-                    <p>
-                      <FaRegComment size={20} className="me-1" />
-                      <span className="fw-semibold">{post.comments}</span>
-                    </p>
-                    <p>
-                      <BiRepost size={24} className="me-1" />
-                      <span className="fw-semibold">{post.reposts}</span>
-                    </p>
-                    <p>
-                      <BsSend size={20} className="me-1" />
-                      <span className="fw-semibold">{post.shares}</span>
-                    </p>
-                  </Stack>
-                  {salvo ? (
-                    <FaBookmark onClick={() => setSalvo(!salvo)} size={20} />
-                  ) : (
-                    <BiBookmark onClick={() => setSalvo(!salvo)} size={20} />
-                  )}
-                </article>
-              </section>
-              <section>
-                <article>
-                  <p className="ps-3 mt-0 mb-0">
-                    Curtido por <span className="fw-bold">liam_legal</span> e{" "}
-                    <span className="fw-bold">outras 265 pessoas</span>
-                  </p>
-                  <p className="ps-3 mt-0">
-                    <span className="fw-bold">{post.user}</span>{" "}
-                    {post.description}
-                  </p>
-                  <p className="ps-3 text-muted">
-                    há 3 horas ·{" "}
-                    <span className="fw-semibold">Ver tradução</span>
-                  </p>
-                </article>
-              </section>
-            </Stack>
-          ))}
-        </Stack>
+            ))}
+          </Stack>
+        </div>
+
         <BottomNavBar />
       </main>
     </>

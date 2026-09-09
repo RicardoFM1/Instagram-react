@@ -11,6 +11,7 @@ const Stories = ({ stories, setStories }) => {
               <Button className="bg-transparent border-0">
 
                 <img
+                  key={stories.id}
                   className={style.fotoPerfilStory}
                   alt="Foto de perfil do stories"
                   aria-label="Foto de perfil do stories"
