@@ -84,7 +84,7 @@ const Home = () => {
       ],
       profile: "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1085&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
-{
+    {
       id: 5,
       user: '066_eduardo',
       videos: [
@@ -210,6 +210,80 @@ const Home = () => {
             ))}
           </Stack>
         </div>
+        <aside className="d-none d-xxl-flex me-5 mt-5">
+          <section>
+            <div className="d-flex gap-2">
+              <img
+                className={style.fotoPerfil}
+                alt="Foto de perfil"
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+              <div className="me-2">
+
+                <p className="mb-0">ricardofm8_</p>
+                <p>ricardo</p>
+              </div>
+              <div>
+                <Button className="bg-transparent text-primary border-0">Trocar</Button>
+              </div>
+            </div>
+            <div className="d-flex">
+
+              <p className="fw-bold">Sugerido para você</p>
+              <p>Ver todos</p>
+            </div>
+            <div className="d-flex gap-2">
+              <img
+                className={style.fotoPerfil}
+                alt="Foto de perfil"
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+              <div className="me-2">
+
+                <p className="mb-0">ricardofm8_</p>
+                <p>ricardo</p>
+              </div>
+              <div>
+                <Button className="bg-transparent text-primary border-0">Seguir</Button>
+              </div>
+            </div>
+
+
+            <div className="d-flex gap-2">
+              <img
+                className={style.fotoPerfil}
+                alt="Foto de perfil"
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+              <div className="me-2">
+
+                <p className="mb-0">ricardofm8_</p>
+                <p>ricardo</p>
+              </div>
+              <div>
+                <Button className="bg-transparent text-primary border-0">Seguir</Button>
+              </div>
+            </div>
+
+            <div className="d-flex gap-2">
+              <img
+                className={style.fotoPerfil}
+                alt="Foto de perfil"
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+              <div className="me-2">
+
+                <p className="mb-0">ricardofm8_</p>
+                <p>ricardo</p>
+              </div>
+              <div>
+                <Button className="bg-transparent text-primary border-0">Seguir</Button>
+              </div>
+            </div>
+
+          </section>
+
+        </aside>
 
         <BottomNavBar />
       </main>

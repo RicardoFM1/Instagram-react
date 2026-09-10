@@ -26,13 +26,18 @@
     }
 
     .divPost {
-        display: flex ;
-        width: 50% ;
+        display: flex;
+        width: 50%;
         align-self: center !important;
         font-size: 20px;
     }
 
-  
+    .fotoPerfil {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 
     .fotoPerfilPost {
         width: 56px;
@@ -45,6 +50,7 @@
 
     .conteudoPrincipal {
         display: flex !important;
+        max-width: 80%;
         flex-direction: column !important;
         align-items: center !important;
     }
