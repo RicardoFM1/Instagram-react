@@ -1,18 +1,18 @@
-.fotoPerfilPost{
+.fotoPerfilPost {
     width: 28px;
     height: 28px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.stackInfoPost{
+.stackInfoPost {
     display: flex;
     justify-content: space-between;
     padding: 10px 14px 0 0;
     height: 30%;
 }
 
-.divPost{
+.divPost {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,22 +20,38 @@
 
 
 @media (min-width: 768px) {
-    .divPost{
+    .listagemPosts {
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .divPost {
         display: flex;
-        
-        
+        width: 50%;
+        align-self: center !important;
+        font-size: 20px;
     }
 
-    .main{
-        width: 100%;
-       
+    .fotoPerfil {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        object-fit: cover;
     }
 
-    .listagemPosts{
-        
+    .fotoPerfilPost {
+        width: 56px;
+        height: 56px;
     }
 
-    .imgPost{
-        
+    .main {
+        width: 100vw;
+    }
+
+    .conteudoPrincipal {
+        display: flex !important;
+        max-width: 80%;
+        flex-direction: column !important;
+        align-items: center !important;
     }
 }

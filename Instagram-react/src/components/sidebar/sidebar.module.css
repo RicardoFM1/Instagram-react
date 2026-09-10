@@ -1,0 +1,31 @@
+.aside {
+    display: none;
+}
+
+
+@media (min-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        z-index: 100;
+        gap: 48px;
+        justify-content: center;
+        padding: 18px;
+    }
+
+    .aside {
+        display: flex;
+        min-width: 90px;
+        min-height: 100vh;
+        max-width: 90px;
+        flex-direction: column;
+    }
+
+    .fotoPerfilStory {
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}

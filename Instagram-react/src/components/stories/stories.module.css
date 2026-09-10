@@ -2,15 +2,15 @@
   margin: 14px;
   overflow: auto;
   display: flex;
-  gap: 0;
+  gap: 4px;
 }
 
-.listagemEmGrupo > div {
+.listagemEmGrupo>div {
   border: none !important;
   padding: 0;
 }
 
-.listagemEmGrupo > div > div {
+.listagemEmGrupo>div>div {
   align-items: center;
 }
 
@@ -20,9 +20,28 @@
 
 
 .fotoPerfilStory {
-  width: 76px;
-  height: 76px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgb(216, 34, 49);
+}
+
+
+@media (min-width: 768px) {
+  .fotoPerfilStory {
+
+    width: 100px;
+    height: 100px;
+
+  }
+
+  .font {
+    font-size: 20px !important;
+  }
+  
+  .listagemEmGrupo {
+    max-width: 70%;
+  }
+
 }
